@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-slate-50 min-h-screen antialiased">
-  <!-- Navbar-->
+  <!-- navbar -->
   <header id="my-navbar"
     class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent border-b border-transparent py-4">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
@@ -29,14 +29,13 @@
       </nav>
 
       <div class="flex items-center space-x-4 z-50">
-        <!-- Create Account Button (Solid Primary Style) -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScjR61coqOxPQ90Q2gm0VVtVTaQE0rj3r15plktzsm0OwKOgA/viewform"
-          target="_blank"
+       
+        <button onclick="openGoogleForm('https://docs.google.com/forms/d/e/1FAIpQLScjR61coqOxPQ90Q2gm0VVtVTaQE0rj3r15plktzsm0OwKOgA/viewform?embedded=true', 'Create an Account')"
           class="hidden md:block bg-[#17478D] hover:bg-[#0A2540] text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md shadow-[#17478D]/20 hover:shadow-lg hover:shadow-[#17478D]/30 transition-all transform hover:-translate-y-0.5">
           Create an Account
-        </a>
+        </button>
 
-        <!-- Mobile Menu Button -->
+        <!-- burger menu -->
         <button id="mobile-menu-btn"
           class="md:hidden p-2 text-[#17478D] hover:bg-[#E1F0FF] rounded-lg transition-colors">
           <i data-lucide="menu" class="w-6 h-6"></i>
@@ -44,7 +43,7 @@
       </div>
     </div>
 
-    <!-- Mobile Menu Dropdown -->
+    <!-- mobile menu dropdown -->
     <div id="mobile-menu"
       class="absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 transform origin-top scale-y-0 opacity-0 transition-all duration-300 md:hidden flex flex-col px-6 py-6 space-y-6">
       <nav class="flex flex-col space-y-4 text-lg font-bold text-[#0A2540]">
@@ -54,16 +53,15 @@
         <a href="#contact-us" class="mobile-link hover:text-[#17478D] transition-colors">Contact Us</a>
       </nav>
       <div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScjR61coqOxPQ90Q2gm0VVtVTaQE0rj3r15plktzsm0OwKOgA/viewform"
-          target="_blank"
-          class="w-full block text-center bg-[#17478D] hover:bg-[#0A2540] text-white px-6 py-3 rounded-full text-base font-bold shadow-md transition-all">
+        <button onclick="openGoogleForm('https://docs.google.com/forms/d/e/1FAIpQLScjR61coqOxPQ90Q2gm0VVtVTaQE0rj3r15plktzsm0OwKOgA/viewform?embedded=true', 'Create an Account'); if(menuOpen) toggleMenu();"
+          class="w-full bg-[#17478D] hover:bg-[#0A2540] text-white px-6 py-3 rounded-full text-base font-bold shadow-md transition-all">
           Create an Account
-        </a>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- hero -->
   <main class="relative w-full min-h-[1000px] lg:min-h-[999px] bg-cover bg-center flex flex-col justify-center pt-24"
     style="background-image: url(&quot;piwpiw.webp&quot;)">
     <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 sm:via-white/70 to-transparent z-0"></div>
@@ -108,11 +106,11 @@
         </div>
 
         <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWz1rfrQZ1sACiGnlCPdItlwU9yi0kb7fa51wQkq5Ia29ZWw/viewform?embedded=true"
+          <button onclick="openGoogleForm('https://docs.google.com/forms/d/e/1FAIpQLSeWz1rfrQZ1sACiGnlCPdItlwU9yi0kb7fa51wQkq5Ia29ZWw/viewform?embedded=true', 'Book an Appointment')"
             class="w-full sm:w-auto inline-flex items-center justify-center bg-[#17478D] hover:bg-[#123972] text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg transition-all hover:-translate-y-0.5">
             Book an Appointment
             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -126,6 +124,7 @@
     </a>
   </main>
 
+  <!-- our services -->
   <section id="our-services" class="py-20 lg:py-32 bg-white w-full overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 mb-20 lg:mb-32">
@@ -223,11 +222,11 @@
     </div>
   </section>
 
-  <!-- About Us -->
+  <!-- about us -->
   <section id="about-us"
     class="relative py-20 lg:py-32 w-full bg-cover bg-center bg-fixed min-h-[900px] flex flex-col justify-center"
     style="background-image: url(&quot;paw.webp&quot;)">
-    <!-- Filter for background -->
+    <!-- filter for background -->
     <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 sm:via-white/70 to-transparent z-0"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
@@ -241,9 +240,9 @@
         <h2
           class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#0A2540] leading-tight tracking-tight mb-8 flex flex-wrap items-end gap-x-3">
           Building a
-          <!-- The invisible window that hides the text when it slides -->
+
           <span class="inline-flex overflow-hidden relative align-bottom">
-            <!-- The actual moving word -->
+            <!-- word anim -->
             <span id="changing-word"
               class="text-[#0A2540] transition-all duration-500 transform translate-y-0 block">Healthier</span>
           </span>
@@ -277,7 +276,7 @@
   <!--  lead vet section -->
   <section id="meet-the-vet" class="py-20 lg:py-32 bg-slate-50 w-full overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <!-- Mobile-only Tag -->
+
       <div class="lg:hidden mb-2 mt-4">
         <div
           class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase shadow-sm w-max">
@@ -287,14 +286,14 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        <!-- Left Column: Doctor's Portrait -->
+
         <div class="lg:col-span-5 relative group mt-6 lg:mt-0">
-          <!-- Decorative Background Arch -->
+
           <div
             class="absolute inset-0 rounded-t-[10rem] rounded-b-[3rem] transform -rotate-3 scale-105 transition-transform duration-500 group-hover:rotate-0">
           </div>
 
-          <!-- Main Image -->
+
           <div
             class="relative w-full aspect-[4/5] overflow-hidden rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100">
             <img src="dr.sins.webp" alt="Portrait of the Lead Veterinarian"
@@ -302,7 +301,7 @@
           </div>
         </div>
 
-        <!-- Right Column: Biography & Details -->
+
         <div class="lg:col-span-7 space-y-8 lg:pl-10">
           <!-- Tag -->
           <div
@@ -338,7 +337,7 @@
             </p>
           </div>
 
-          <!-- Stylized Quote Block -->
+          <!-- quote -->
           <blockquote
             class="relative border-l-4 border-[#17478D] pl-6 py-4 my-8 bg-white rounded-r-2xl shadow-sm text-slate-700 text-lg font-medium italic">
             <i data-lucide="quote"
@@ -354,13 +353,13 @@
 
   <!-- contact us  section-->
   <section id="contact-us" class="py-20 lg:py-32 relative overflow-hidden w-full">
-    <!-- Simple Background -->
+    <!-- contact  -->
     <div class="absolute inset-0 bg-slate-50 z-0"></div>
 
     <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
       <div class="bg-slate-50 border border-slate-50 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <!-- Left: Content & Lottie -->
+
           <div class="space-y-8 lg:pr-8 text-center lg:text-left flex flex-col items-center lg:items-start">
             <div>
               <div
@@ -383,9 +382,9 @@
             </div>
           </div>
 
-          <!-- Right: Modern Bento Grid -->
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-            <!-- Main Email Action -->
+
             <div
               class="sm:col-span-2 bg-[#17478D] rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 shadow-xl relative overflow-hidden group flex flex-col justify-center">
               <div
@@ -596,7 +595,61 @@
         if (menuOpen) toggleMenu();
       });
     });
+
+    // Google Form Modal Logic
+    function openGoogleForm(url, title) {
+      const googleFormModal = document.getElementById("google-form-modal");
+      const modalContent = googleFormModal.querySelector(".modal-content-container");
+      const modalTitle = googleFormModal.querySelector("h3");
+      const modalIframe = googleFormModal.querySelector("iframe");
+
+      modalTitle.textContent = title;
+      modalIframe.src = url;
+
+      googleFormModal.classList.remove("opacity-0", "pointer-events-none");
+      modalContent.classList.remove("scale-95");
+      modalContent.classList.add("scale-100");
+      document.body.style.overflow = "hidden"; // Prevent background scrolling
+    }
+
+    function closeGoogleForm() {
+      const googleFormModal = document.getElementById("google-form-modal");
+      const modalContent = googleFormModal.querySelector(".modal-content-container");
+      googleFormModal.classList.add("opacity-0", "pointer-events-none");
+      modalContent.classList.remove("scale-100");
+      modalContent.classList.add("scale-95");
+      document.body.style.overflow = ""; // Restore background scrolling
+      
+      // Clear iframe src after transition to stop it from loading in the background
+      setTimeout(() => {
+        const iframe = googleFormModal.querySelector("iframe");
+        if(iframe) iframe.src = "";
+      }, 300);
+    }
   </script>
+
+  <!-- Google Form Modal -->
+  <div id="google-form-modal"
+    onclick="if(event.target === this) closeGoogleForm()"
+    class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+    <div
+      class="modal-content-container bg-white rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+        <h3 class="text-xl font-bold text-[#0A2540]">Loading...</h3>
+        <button onclick="closeGoogleForm()"
+          class="text-slate-400 hover:text-[#E87B75] bg-white rounded-full p-2 shadow-sm transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <!-- Iframe Container -->
+      <div class="flex-1 overflow-y-auto overflow-x-hidden bg-slate-50 relative w-full h-[80vh] min-h-[400px]">
+        <iframe
+          src=""
+          class="absolute inset-0 w-full h-full border-0" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </div>
+  </div>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script>
