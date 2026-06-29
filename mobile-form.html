@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PawPatrol Form</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logopaw.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col antialiased">
+  <header class="px-4 py-4 border-b border-slate-200 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+    <button
+      onclick="window.history.back()"
+      class="text-slate-500 hover:text-[#17478D] bg-slate-50 hover:bg-[#E1F0FF] rounded-full px-4 py-2 transition-colors flex items-center space-x-2"
+    >
+      <i data-lucide="arrow-left" class="w-4 h-4"></i>
+      <span class="font-bold text-sm">Back</span>
+    </button>
+    <h3 id="form-title" class="text-base sm:text-lg font-bold text-[#0A2540] truncate max-w-[200px] text-center">Loading...</h3>
+    <div class="w-[88px]"></div> <!-- Spacer for perfect centering -->
+  </header>
+  
+  <div class="flex-1 w-full bg-white flex flex-col relative h-[calc(100vh-65px)]">
+    <iframe
+      id="form-iframe"
+      src=""
+      class="absolute inset-0 w-full h-full border-0"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+    >Loading…</iframe>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    
+    // Extract query parameters passed from index.html
+    const urlParams = new URLSearchParams(window.location.search);
+    const formUrl = urlParams.get('url');
+    const formTitle = urlParams.get('title');
+    
+    if (formUrl) {
+      document.getElementById('form-iframe').src = formUrl;
+    }
+    if (formTitle) {
+      document.getElementById('form-title').textContent = formTitle;
+      document.title = formTitle + ' - PawPatrol';
+    }
+  </script>
+</body>
+</html>

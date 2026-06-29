@@ -8,12 +8,17 @@
       content="PawPatrol Veterinary Clinic - Providing compassionate care for your best friend. Quality veterinary care with a personal touch."
     />
     <title>PawPatrol</title>
-    <link rel="icon" type="image/svg+xml" href="logopaw.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/logopaw.svg" />
     <link rel="preconnect" href="https://unpkg.com" crossorigin />
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
-    <link rel="preload" as="image" href="piwpiw.webp" />
-    <link rel="preload" href="scrolldowner.json" as="fetch" crossorigin="anonymous" />
-    <link rel="preload" href="pethug.json" as="fetch" crossorigin="anonymous" />
+    <link rel="preload" as="image" href="assets/piwpiw.webp" />
+    <link
+      rel="preload"
+      href="assets/scrolldowner.json"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="assets/pethug.json" as="fetch" crossorigin="anonymous" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
@@ -28,7 +33,7 @@
       >
         <a href="#" class="flex items-center space-x-3 z-50">
           <img
-            src="logopaw.svg"
+            src="assets/logopaw.svg"
             alt="PawPatrol Veterinary Clinic Logo"
             width="160"
             height="64"
@@ -129,7 +134,7 @@
     <!-- hero -->
     <main
       class="relative w-full min-h-[1535px] lg:min-h-[1024px] bg-cover bg-center flex flex-col justify-center pt-24"
-      style="background-image: url(&quot;piwpiw.webp&quot;)"
+      style="background-image: url(&quot;assets/piwpiw.webp&quot;)"
     >
       <div
         class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 sm:via-white/70 to-transparent z-0"
@@ -214,7 +219,7 @@
         class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer opacity-80 hover:opacity-100 transition-opacity"
       >
         <lottie-player
-          src="scrolldowner.json"
+          src="assets/scrolldowner.json"
           background="transparent"
           speed="1"
           style="width: 40px; height: 40px"
@@ -269,7 +274,7 @@
               class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100"
             >
               <img
-                src="wellnessexam.webp"
+                src="assets/wellnessexam.webp"
                 alt="Veterinarian performing wellness exam"
                 width="640"
                 height="426"
@@ -295,7 +300,7 @@
               class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100"
             >
               <img
-                src="dental.webp"
+                src="assets/dental.webp"
                 alt="Veterinary dental cleaning"
                 width="640"
                 height="426"
@@ -321,7 +326,7 @@
               class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100"
             >
               <img
-                src="surg.webp"
+                src="assets/surg.webp"
                 alt="Veterinary surgical care"
                 width="640"
                 height="426"
@@ -347,7 +352,7 @@
               class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100"
             >
               <img
-                src="xray.webp"
+                src="assets/xray.webp"
                 alt="Veterinary ultrasound and x-ray"
                 width="640"
                 height="640"
@@ -373,7 +378,7 @@
     <section
       id="about-us"
       class="relative py-20 lg:py-32 w-full bg-cover bg-center bg-fixed min-h-[900px] flex flex-col justify-center"
-      style="background-image: url(&quot;paw.webp&quot;)"
+      style="background-image: url(&quot;assets/paw.webp&quot;)"
     >
       <!-- filter for background -->
       <div
@@ -460,7 +465,7 @@
               class="relative w-full aspect-[4/5] overflow-hidden rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100"
             >
               <img
-                src="dr.sins.webp"
+                src="assets/dr.sins.webp"
                 alt="Portrait of the Lead Veterinarian"
                 width="389"
                 height="653"
@@ -575,7 +580,7 @@
                 class="w-full max-w-[240px] md:max-w-[280px] opacity-100 transition-transform duration-500"
               >
                 <lottie-player
-                  src="pethug.json"
+                  src="assets/pethug.json"
                   background="transparent"
                   speed="1"
                   loop
@@ -687,7 +692,7 @@
           <div class="space-y-4 max-w-md">
             <a href="#" class="flex items-center space-x-2 group w-max">
               <img
-                src="logopaw.svg"
+                src="assets/logopaw.svg"
                 alt="PawPatrol Veterinary Clinic Logo"
                 width="160"
                 height="48"
@@ -742,7 +747,7 @@
         class="w-full flex justify-center -mt-[150px] md:-mt-[250px] lg:-mt-[350px] -mb-1 relative z-0 pointer-events-none"
       >
         <img
-          src="petsfooter.svg"
+          src="assets/petsfooter.svg"
           alt="Happy PawPatrol Pets"
           width="1400"
           height="200"
@@ -762,173 +767,14 @@
         </div>
       </div>
     </footer>
-    <script>
-      const header = document.getElementById("my-navbar");
 
-      // word changing animation
-      document.addEventListener("DOMContentLoaded", function () {
-        const words = ["Healthier", "Happier", "Better"];
-        let currentIndex = 0;
-        const wordElement = document.getElementById("changing-word");
-
-        if (wordElement) {
-          setInterval(() => {
-            wordElement.classList.remove("translate-y-0", "opacity-100");
-            wordElement.classList.add("-translate-y-full", "opacity-0");
-
-            setTimeout(() => {
-              currentIndex = (currentIndex + 1) % words.length;
-              wordElement.textContent = words[currentIndex];
-
-              wordElement.classList.remove(
-                "transition-all",
-                "duration-500",
-                "-translate-y-full",
-              );
-              wordElement.classList.add("translate-y-full");
-
-              void wordElement.offsetWidth;
-
-              wordElement.classList.add("transition-all", "duration-500");
-              wordElement.classList.remove("translate-y-full", "opacity-0");
-              wordElement.classList.add("translate-y-0", "opacity-100");
-            }, 300);
-          }, 3000);
-        }
-      });
-
-      // When the user scrolls down 20px from the top of the document, change the navbar background
-      window.addEventListener("scroll", () => {
-        // When the user scrolls more than 20 pixels down
-        if (window.scrollY > 20) {
-          header.classList.remove("bg-transparent", "py-4");
-          header.classList.add("bg-white/95", "backdrop-blur-sm", "py-3");
-        } else {
-          // Revert back to transparent when at the top
-          header.classList.add("bg-transparent", "py-4", "border-transparent");
-          header.classList.remove(
-            "bg-white/95",
-            "backdrop-blur-sm",
-            "py-3",
-            "shadow-md",
-            "border-slate-200",
-          );
-        }
-      });
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const mobileLinks = document.querySelectorAll(".mobile-link");
-
-      let menuOpen = false;
-
-      function toggleMenu() {
-        menuOpen = !menuOpen;
-        if (menuOpen) {
-          mobileMenu.classList.remove("scale-y-0", "opacity-0");
-          mobileMenu.classList.add("scale-y-100", "opacity-100");
-          mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
-          lucide.createIcons();
-        } else {
-          mobileMenu.classList.remove("scale-y-100", "opacity-100");
-          mobileMenu.classList.add("scale-y-0", "opacity-0");
-          mobileMenuBtn.innerHTML =
-            '<i data-lucide="menu" class="w-6 h-6"></i>';
-          lucide.createIcons();
-        }
-      }
-
-      if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener("click", toggleMenu);
-      }
-
-      // Close menu when clicking a link
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          if (menuOpen) toggleMenu();
-        });
-      });
-
-      // Google Form Modal Logic
-      function openGoogleForm(url, title) {
-        const googleFormModal = document.getElementById("google-form-modal");
-        const modalContent = googleFormModal.querySelector(
-          ".modal-content-container",
-        );
-        const modalTitle = googleFormModal.querySelector("h3");
-        const modalIframe = googleFormModal.querySelector("iframe");
-
-        modalTitle.textContent = title;
-        modalIframe.src = url;
-
-        googleFormModal.classList.remove("opacity-0", "pointer-events-none");
-        modalContent.classList.remove("scale-95");
-        modalContent.classList.add("scale-100");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-      }
-
-      function closeGoogleForm() {
-        const googleFormModal = document.getElementById("google-form-modal");
-        const modalContent = googleFormModal.querySelector(
-          ".modal-content-container",
-        );
-        googleFormModal.classList.add("opacity-0", "pointer-events-none");
-        modalContent.classList.remove("scale-100");
-        modalContent.classList.add("scale-95");
-        document.body.style.overflow = ""; // Restore background scrolling
-
-        // Clear iframe src after transition to stop it from loading in the background
-        setTimeout(() => {
-          const iframe = googleFormModal.querySelector("iframe");
-          if (iframe) iframe.src = "";
-        }, 300);
-      }
-    </script>
-
-    <!-- Google Form Modal -->
-    <div
-      id="google-form-modal"
-      onclick="if (event.target === this) closeGoogleForm();"
-      class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6"
-    >
-      <div
-        class="modal-content-container bg-white rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300"
-      >
-        <!-- Modal Header -->
-        <div
-          class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50"
-        >
-          <h3 class="text-xl font-bold text-[#0A2540]">Loading...</h3>
-          <button
-            onclick="closeGoogleForm()"
-            aria-label="Close form"
-            class="text-slate-500 hover:text-[#E87B75] bg-white rounded-full p-2 shadow-sm transition-colors"
-          >
-            <i data-lucide="x" class="w-5 h-5"></i>
-          </button>
-        </div>
-        <!-- Iframe Container -->
-        <div
-          class="flex-1 overflow-y-auto overflow-x-hidden bg-slate-50 relative w-full h-[80vh] min-h-[400px]"
-        >
-          <iframe
-            src=""
-            title="Google Form"
-            class="absolute inset-0 w-full h-full border-0"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            >Loading…</iframe
-          >
-        </div>
-      </div>
-    </div>
+    <!-- Google Form Modal will be dynamically loaded here by script.js -->
     <script defer src="https://unpkg.com/lucide@latest"></script>
-    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        lucide.createIcons();
-      });
-    </script>
+    <script
+      defer
+      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+    ></script>
+
+    <script src="script.js"></script>
   </body>
 </html>

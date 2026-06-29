@@ -1,0 +1,37 @@
+<div
+  id="google-form-modal"
+  onclick="if (event.target === this) closeGoogleForm();"
+  class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6"
+>
+  <div
+    class="modal-content-container bg-white rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300"
+  >
+    <!-- Modal Header -->
+    <div
+      class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50"
+    >
+      <h3 class="text-xl font-bold text-[#0A2540]">Loading...</h3>
+      <button
+        onclick="closeGoogleForm()"
+        aria-label="Close form"
+        class="text-slate-500 hover:text-[#E87B75] bg-white rounded-full p-2 shadow-sm transition-colors"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <!-- Iframe Container -->
+    <div
+      class="flex-1 overflow-y-auto overflow-x-hidden bg-slate-50 relative w-full h-[80vh] min-h-[400px]"
+    >
+      <iframe
+        src=""
+        title="Google Form"
+        class="absolute inset-0 w-full h-full border-0"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        >Loading…</iframe
+      >
+    </div>
+  </div>
+</div>
