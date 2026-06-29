@@ -86,7 +86,8 @@ mobileLinks.forEach((link) => {
 
 // Google Form Modal Logic
 async function openGoogleForm(url, title) {
-  // If on mobile/small screens, redirect to the new mobile form page
+
+  //if mobile device, redirect to mobile form page
   if (window.matchMedia("(max-width: 768px)").matches) {
     const mobileFormUrl = `mobile-form.html?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
     window.location.href = mobileFormUrl;
@@ -102,7 +103,7 @@ async function openGoogleForm(url, title) {
       const html = await response.text();
       document.body.insertAdjacentHTML('beforeend', html);
       googleFormModal = document.getElementById("google-form-modal");
-      
+
       if (typeof lucide !== 'undefined') {
         lucide.createIcons();
       }
@@ -122,10 +123,10 @@ async function openGoogleForm(url, title) {
   modalIframe.src = url;
 
   googleFormModal.classList.remove("opacity-0", "pointer-events-none");
-  void googleFormModal.offsetWidth; // Force reflow for transition
+  void googleFormModal.offsetWidth;
   modalContent.classList.remove("scale-95");
   modalContent.classList.add("scale-100");
-  document.body.style.overflow = "hidden"; // Prevent background scrolling
+  document.body.style.overflow = "hidden";
 }
 
 function closeGoogleForm() {
