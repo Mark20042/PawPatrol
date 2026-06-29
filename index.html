@@ -1,928 +1,674 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="PawPatrol Veterinary Clinic - Providing compassionate care for your best friend. Quality veterinary care with a personal touch."
-    />
-    <title>PawPatrol</title>
-    <link rel="icon" type="image/svg+xml" href="logopaw.svg" />
-    <link rel="preload" as="image" href="piwpiw.webp" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
 
-  <body class="bg-slate-50 min-h-screen antialiased">
-    <!-- navbar -->
-    <header
-      id="my-navbar"
-      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent border-b border-transparent py-4"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"
-      >
-        <a href="#" class="flex items-center space-x-3 z-50">
-          <img
-            src="logopaw.svg"
-            alt="PawPatrol Veterinary Clinic Logo"
-            width="160"
-            height="64"
-            class="h-12 md:h-16 w-auto object-contain shrink-0"
-          />
-          <h1
-            class="text-xl md:text-3xl font-black text-[#17478D] tracking-tight m-0"
-          >
-            PawPatrol
-          </h1>
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="PawPatrol Veterinary Clinic - Providing compassionate care for your best friend. Quality veterinary care with a personal touch." />
+  <title>PawPatrol</title>
+  <link rel="icon" type="image/svg+xml" href="logopaw.svg" />
+  <link rel="preload" as="image" href="piwpiw.webp" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-        <nav
-          class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-700"
-        >
-          <a href="#our-services" class="hover:text-[#17478D] transition-colors"
-            >Our Services</a
-          >
-          <a href="#about-us" class="hover:text-[#17478D] transition-colors"
-            >About Us</a
-          >
-          <a href="#meet-the-vet" class="hover:text-[#17478D] transition-colors"
-            >Meet the Vet</a
-          >
-          <a href="#contact-us" class="hover:text-[#17478D] transition-colors"
-            >Contact Us</a
-          >
-        </nav>
+<body class="bg-slate-50 min-h-screen antialiased">
+  <!-- navbar -->
+  <header id="my-navbar"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent border-b border-transparent py-4">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 z-50">
+        <img src="logopaw.svg" alt="PawPatrol Veterinary Clinic Logo" width="160" height="64"
+          class="h-12 md:h-16 w-auto object-contain shrink-0" />
+        <h1 class="text-xl md:text-3xl font-black text-[#17478D] tracking-tight m-0">
+          PawPatrol
+        </h1>
+      </a>
 
-        <div class="flex items-center space-x-4 z-50">
-          <button
-            onclick="
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+        <a href="#our-services" class="hover:text-[#17478D] transition-colors">Our Services</a>
+        <a href="#about-us" class="hover:text-[#17478D] transition-colors">About Us</a>
+        <a href="#meet-the-vet" class="hover:text-[#17478D] transition-colors">Meet the Vet</a>
+        <a href="#contact-us" class="hover:text-[#17478D] transition-colors">Contact Us</a>
+      </nav>
+
+      <div class="flex items-center space-x-4 z-50">
+        <button onclick="
               openGoogleForm(
                 'https://docs.google.com/forms/d/e/1FAIpQLScjR61coqOxPQ90Q2gm0VVtVTaQE0rj3r15plktzsm0OwKOgA/viewform?embedded=true',
                 'Create an Account',
               )
             "
-            class="hidden md:block bg-[#17478D] hover:bg-[#0A2540] text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md shadow-[#17478D]/20 hover:shadow-lg hover:shadow-[#17478D]/30 transition-all transform hover:-translate-y-0.5"
-          >
-            Create an Account
-          </button>
+          class="hidden md:block bg-[#17478D] hover:bg-[#0A2540] text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md shadow-[#17478D]/20 hover:shadow-lg hover:shadow-[#17478D]/30 transition-all transform hover:-translate-y-0.5">
+          Create an Account
+        </button>
 
-          <!-- burger menu -->
-          <button
-            id="mobile-menu-btn"
-            aria-label="Toggle mobile menu"
-            class="md:hidden p-2 text-[#17478D] hover:bg-[#E1F0FF] rounded-lg transition-colors"
-          >
-            <i data-lucide="menu" class="w-6 h-6"></i>
-          </button>
-        </div>
+        <!-- burger menu -->
+        <button id="mobile-menu-btn" aria-label="Toggle mobile menu"
+          class="md:hidden p-2 text-[#17478D] hover:bg-[#E1F0FF] rounded-lg transition-colors">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
       </div>
+    </div>
 
-      <!-- mobile menu dropdown -->
-      <div
-        id="mobile-menu"
-        class="absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 transform origin-top scale-y-0 opacity-0 transition-all duration-300 md:hidden flex flex-col px-6 py-6 space-y-6"
-      >
-        <nav class="flex flex-col space-y-4 text-lg font-bold text-[#0A2540]">
-          <a
-            href="#our-services"
-            class="mobile-link hover:text-[#17478D] transition-colors"
-            >Our Services</a
-          >
-          <a
-            href="#about-us"
-            class="mobile-link hover:text-[#17478D] transition-colors"
-            >About Us</a
-          >
-          <a
-            href="#meet-the-vet"
-            class="mobile-link hover:text-[#17478D] transition-colors"
-            >Meet the Vet</a
-          >
-          <a
-            href="#contact-us"
-            class="mobile-link hover:text-[#17478D] transition-colors"
-            >Contact Us</a
-          >
-        </nav>
-        <div>
-          <button
-            onclick="
+    <!-- mobile menu dropdown -->
+    <div id="mobile-menu"
+      class="absolute top-full left-0 w-full bg-white shadow-xl border-t border-slate-100 transform origin-top scale-y-0 opacity-0 transition-all duration-300 md:hidden flex flex-col px-6 py-6 space-y-6">
+      <nav class="flex flex-col space-y-4 text-lg font-bold text-[#0A2540]">
+        <a href="#our-services" class="mobile-link hover:text-[#17478D] transition-colors">Our Services</a>
+        <a href="#about-us" class="mobile-link hover:text-[#17478D] transition-colors">About Us</a>
+        <a href="#meet-the-vet" class="mobile-link hover:text-[#17478D] transition-colors">Meet the Vet</a>
+        <a href="#contact-us" class="mobile-link hover:text-[#17478D] transition-colors">Contact Us</a>
+      </nav>
+      <div>
+        <button onclick="
               openGoogleForm(
                 'https://docs.google.com/forms/d/e/1FAIpQLScjR61coqOxPQ90Q2gm0VVtVTaQE0rj3r15plktzsm0OwKOgA/viewform?embedded=true',
                 'Create an Account',
               );
               if (menuOpen) toggleMenu();
             "
-            class="w-full bg-[#17478D] hover:bg-[#0A2540] text-white px-6 py-3 rounded-full text-base font-bold shadow-md transition-all"
-          >
-            Create an Account
-          </button>
-        </div>
+          class="w-full bg-[#17478D] hover:bg-[#0A2540] text-white px-6 py-3 rounded-full text-base font-bold shadow-md transition-all">
+          Create an Account
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- hero -->
-    <main
-      class="relative w-full min-h-[1535px] lg:min-h-[1024px] bg-cover bg-center flex flex-col justify-center pt-24"
-      style="background-image: url(&quot;piwpiw.webp&quot;)"
-    >
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 sm:via-white/70 to-transparent z-0"
-      ></div>
+  <!-- hero -->
+  <main class="relative w-full min-h-[1535px] lg:min-h-[1024px] bg-cover bg-center flex flex-col justify-center pt-24"
+    style="background-image: url(&quot;piwpiw.webp&quot;)">
+    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 sm:via-white/70 to-transparent z-0"></div>
 
-      <div
-        class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 flex items-center py-12 lg:py-20"
-      >
-        <div class="max-w-xl space-y-6">
-          <h2
-            class="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-[#0A2540] leading-tight tracking-tight drop-shadow-sm"
-          >
-            Compassionate care <br class="hidden sm:block" />
-            for your best friend
-          </h2>
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 flex items-center py-12 lg:py-20">
+      <div class="max-w-xl space-y-6">
+        <h2
+          class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0A2540] leading-tight tracking-tight drop-shadow-sm">
+          Compassionate care <br class="hidden sm:block" />
+          for your best friend
+        </h2>
 
-          <p
-            class="text-lg text-[#0A2540] font-medium leading-relaxed max-w-md"
-          >
-            Quality veterinary care with a personal touch.<br />
-            Because they deserve the best.
-          </p>
+        <p class="text-lg text-[#0A2540] font-medium leading-relaxed max-w-md">
+          Quality veterinary care with a personal touch.<br />
+          Because they deserve the best.
+        </p>
 
-          <div class="flex items-start gap-6 sm:gap-10 pt-4 pb-2">
-            <div class="flex flex-col items-center text-center space-y-3">
-              <div
-                class="w-14 h-14 rounded-full border-2 border-[#E1F0FF] bg-white flex items-center justify-center text-[#17478D] shadow-sm"
-              >
-                <i data-lucide="stethoscope" class="w-6 h-6 stroke-[2px]"></i>
-              </div>
-              <span
-                class="text-xs sm:text-sm font-semibold text-[#0A2540] leading-tight"
-                >Comprehensive<br />Care</span
-              >
+        <div class="flex items-start gap-6 sm:gap-10 pt-4 pb-2">
+          <div class="flex flex-col items-center text-center space-y-3">
+            <div
+              class="w-14 h-14 rounded-full border-2 border-[#E1F0FF] bg-white flex items-center justify-center text-[#17478D] shadow-sm">
+              <i data-lucide="stethoscope" class="w-6 h-6 stroke-[2px]"></i>
             </div>
-
-            <div class="flex flex-col items-center text-center space-y-3">
-              <div
-                class="w-14 h-14 rounded-full border-2 border-[#E1F0FF] bg-white flex items-center justify-center text-[#17478D] shadow-sm"
-              >
-                <i data-lucide="heart" class="w-6 h-6 stroke-[2px]"></i>
-              </div>
-              <span
-                class="text-xs sm:text-sm font-semibold text-[#0A2540] leading-tight"
-                >Compassionate<br />Team</span
-              >
-            </div>
-
-            <div class="flex flex-col items-center text-center space-y-3">
-              <div
-                class="w-14 h-14 rounded-full border-2 border-[#E1F0FF] bg-white flex items-center justify-center text-[#17478D] shadow-sm"
-              >
-                <i data-lucide="paw-print" class="w-6 h-6 stroke-[2px]"></i>
-              </div>
-              <span
-                class="text-xs sm:text-sm font-semibold text-[#0A2540] leading-tight"
-                >Happy,<br />Healthy Pets</span
-              >
-            </div>
+            <span class="text-xs sm:text-sm font-semibold text-[#0A2540] leading-tight">Comprehensive<br />Care</span>
           </div>
 
-          <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
-            <button
-              onclick="
+          <div class="flex flex-col items-center text-center space-y-3">
+            <div
+              class="w-14 h-14 rounded-full border-2 border-[#E1F0FF] bg-white flex items-center justify-center text-[#17478D] shadow-sm">
+              <i data-lucide="heart" class="w-6 h-6 stroke-[2px]"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-semibold text-[#0A2540] leading-tight">Compassionate<br />Team</span>
+          </div>
+
+          <div class="flex flex-col items-center text-center space-y-3">
+            <div
+              class="w-14 h-14 rounded-full border-2 border-[#E1F0FF] bg-white flex items-center justify-center text-[#17478D] shadow-sm">
+              <i data-lucide="paw-print" class="w-6 h-6 stroke-[2px]"></i>
+            </div>
+            <span class="text-xs sm:text-sm font-semibold text-[#0A2540] leading-tight">Happy,<br />Healthy Pets</span>
+          </div>
+        </div>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
+          <button onclick="
                 openGoogleForm(
                   'https://docs.google.com/forms/d/e/1FAIpQLSeWz1rfrQZ1sACiGnlCPdItlwU9yi0kb7fa51wQkq5Ia29ZWw/viewform?embedded=true',
                   'Book an Appointment',
                 )
               "
-              class="w-full sm:w-auto inline-flex items-center justify-center bg-[#17478D] hover:bg-[#123972] text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg transition-all hover:-translate-y-0.5"
-            >
-              Book an Appointment
-              <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- scroll down anim -->
-      <a
-        href="#our-services"
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer opacity-80 hover:opacity-100 transition-opacity"
-      >
-        <lottie-player
-          src="scrolldowner.json"
-          background="transparent"
-          speed="1"
-          style="width: 40px; height: 40px"
-          loop
-          autoplay
-        >
-        </lottie-player>
-      </a>
-    </main>
-
-    <!-- our services -->
-    <section
-      id="our-services"
-      class="py-20 lg:py-32 bg-white w-full overflow-hidden"
-    >
-      <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div
-          class="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 mb-20 lg:mb-32"
-        >
-          <div class="max-w-2xl">
-            <div
-              class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm"
-            >
-              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-              <span>Our Services</span>
-            </div>
-
-            <h2
-              class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#0A2540] leading-tight tracking-tight"
-            >
-              Comprehensive Care <br class="hidden lg:block" />
-              & Veterinary Services
-            </h2>
-          </div>
-
-          <div class="lg:w-1/3 lg:pt-20">
-            <p
-              class="text-slate-500 text-base md:text-lg font-medium leading-relaxed"
-            >
-              Experience top-tier veterinary services designed to withstand
-              every stage of life, ensuring your pet remains healthy, active,
-              and happy.
-            </p>
-          </div>
-        </div>
-
-        <div class="flex flex-col space-y-24 lg:space-y-32">
-          <div
-            class="flex flex-col md:flex-row items-center gap-10 lg:gap-20 group"
-          >
-            <div
-              class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100"
-            >
-              <img
-                src="wellnessexam.webp"
-                alt="Veterinarian performing wellness exam"
-                width="1200"
-                height="800"
-                loading="lazy"
-                class="w-full aspect-[4/3] lg:aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="w-full md:w-1/2 max-w-lg space-y-5">
-              <h3 class="text-3xl lg:text-4xl font-bold text-[#0A2540]">
-                Wellness exams
-              </h3>
-              <p class="text-slate-500 text-lg leading-relaxed">
-                Get a custom health plan that complements your pet's lifestyle.
-                Regular check-ups and tailored vaccinations keep them strong.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col md:flex-row-reverse items-center gap-10 lg:gap-20 group"
-          >
-            <div
-              class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100"
-            >
-              <img
-                src="dental.webp"
-                alt="Veterinary dental cleaning"
-                width="1200"
-                height="800"
-                loading="lazy"
-                class="w-full aspect-[4/3] lg:aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="w-full md:w-1/2 max-w-lg space-y-5 md:pr-10 lg:pr-20">
-              <h3 class="text-3xl lg:text-4xl font-bold text-[#0A2540]">
-                Advanced dental
-              </h3>
-              <p class="text-slate-500 text-lg leading-relaxed">
-                Ensure your pet's oral health is in top shape with detailed
-                inspections, deep cleanings, and expert preventative advice.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col md:flex-row items-center gap-10 lg:gap-20 group"
-          >
-            <div
-              class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100"
-            >
-              <img
-                src="surg.webp"
-                alt="Veterinary surgical care"
-                width="1200"
-                height="800"
-                loading="lazy"
-                class="w-full aspect-[4/3] lg:aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="w-full md:w-1/2 max-w-lg space-y-5">
-              <h3 class="text-3xl lg:text-4xl font-bold text-[#0A2540]">
-                Surgical care
-              </h3>
-              <p class="text-slate-500 text-lg leading-relaxed">
-                From routine spays to complex soft-tissue surgeries, trust our
-                experienced team and sterile environment for safe recoveries.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col md:flex-row-reverse items-center gap-10 lg:gap-20 group"
-          >
-            <div
-              class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100"
-            >
-              <img
-                src="xray.webp"
-                alt="Veterinary ultrasound and x-ray"
-                width="800"
-                height="800"
-                loading="lazy"
-                class="w-full aspect-[4/3] lg:aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="w-full md:w-1/2 max-w-lg space-y-5 md:pr-10 lg:pr-20">
-              <h3 class="text-3xl lg:text-4xl font-bold text-[#0A2540]">
-                In-house diagnostics
-              </h3>
-              <p class="text-slate-500 text-lg leading-relaxed">
-                Upgrade your pet's care with rapid, accurate testing including
-                digital X-rays, ultrasounds, and comprehensive blood work.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- about us -->
-    <section
-      id="about-us"
-      class="relative py-20 lg:py-32 w-full bg-cover bg-center bg-fixed min-h-[900px] flex flex-col justify-center"
-      style="background-image: url(&quot;paw.webp&quot;)"
-    >
-      <!-- filter for background -->
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 sm:via-white/70 to-transparent z-0"
-      ></div>
-
-      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
-        <div class="max-w-2xl flex flex-col justify-center">
-          <div
-            class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm w-max"
-          >
-            <i data-lucide="heart" class="w-3.5 h-3.5 fill-current"></i>
-            <span>About Us</span>
-          </div>
-
-          <h2
-            class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#0A2540] leading-tight tracking-tight mb-8 flex flex-wrap items-end gap-x-3"
-          >
-            Building a
-
-            <span class="inline-flex overflow-hidden relative align-bottom">
-              <!-- word anim -->
-              <span
-                id="changing-word"
-                class="text-[#0A2540] transition-all duration-500 transform translate-y-0 block"
-                >Healthier</span
-              >
-            </span>
-            Pet Community.
-          </h2>
-
-          <!-- Paragraph -->
-          <p
-            class="text-slate-700 text-base md:text-lg leading-relaxed font-medium"
-          >
-            <span class="font-extrabold text-[#17478D]">Pawpatrol</span> was
-            founded by a passionate team of lifelong animal lovers and visionary
-            veterinarians. Their shared dream was to create a medical haven of
-            knowledge and care accessible to all pets. United by their belief in
-            the transformational power of compassionate care, they embarked on a
-            journey to build this clinic. With relentless dedication, they
-            gathered a team of experts and launched this modern facility,
-            creating a community of pet parents all connected by the desire to
-            see their furry friends explore, live, and grow happily.
-          </p>
-
-          <div class="pt-8">
-            <a
-              href="#meet-the-vet"
-              class="bg-[#17478D] hover:bg-[#0A2540] text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-all hover:-translate-y-1 flex items-center w-max"
-            >
-              Meet Our Lead Veterinarian
-              <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--  lead vet section -->
-    <section
-      id="meet-the-vet"
-      class="py-20 lg:py-32 bg-slate-50 w-full overflow-hidden"
-    >
-      <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="lg:hidden mb-2 mt-4">
-          <div
-            class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase shadow-sm w-max"
-          >
-            <i data-lucide="stethoscope" class="w-3.5 h-3.5 fill-current"></i>
-            <span>Meet Our Lead Veterinarian</span>
-          </div>
-        </div>
-
-        <div
-          class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
-        >
-          <div class="lg:col-span-5 relative group mt-6 lg:mt-0">
-            <div
-              class="absolute inset-0 rounded-t-[10rem] rounded-b-[3rem] transform -rotate-3 scale-105 transition-transform duration-500 group-hover:rotate-0"
-            ></div>
-
-            <div
-              class="relative w-full aspect-[4/5] overflow-hidden rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100"
-            >
-              <img
-                src="dr.sins.webp"
-                alt="Portrait of the Lead Veterinarian"
-                width="389"
-                height="653"
-                loading="lazy"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-          </div>
-
-          <div class="lg:col-span-7 space-y-8 lg:pl-10">
-            <!-- Tag -->
-            <div
-              class="hidden lg:inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm w-max"
-            >
-              <i data-lucide="stethoscope" class="w-3.5 h-3.5 fill-current"></i>
-              <span>Meet Our Lead Veterinarian</span>
-            </div>
-
-            <!-- Name and Title -->
-            <div>
-              <h2
-                class="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A2540] leading-tight tracking-tight mb-3"
-              >
-                Dr. Jhonny Sins
-              </h2>
-              <p class="text-xl md:text-2xl font-bold text-[#17478D]">
-                Lead Veterinarian & Founder
-              </p>
-            </div>
-
-            <!-- Bio Paragraphs -->
-            <div
-              class="text-lg text-slate-600 font-medium leading-relaxed space-y-6"
-            >
-              <p>
-                With over 15 years of dedicated experience in small animal
-                medicine, Dr. Sins founded PawPatrol with a single mission: to
-                provide world-class, fear-free veterinary care in a welcoming,
-                comfortable environment.
-              </p>
-              <p>
-                He received his Doctorate of Veterinary Medicine with honors and
-                specializes in preventative care, soft-tissue surgery, and
-                specialized feline medicine. When he isn't at the clinic
-                treating his favorite patients, you can find him hiking local
-                trails with his two rescue golden retrievers.
-              </p>
-            </div>
-
-            <!-- quote -->
-            <blockquote
-              class="relative border-l-4 border-[#17478D] pl-6 py-4 my-8 bg-white rounded-r-2xl shadow-sm text-slate-700 text-lg font-medium italic"
-            >
-              <i
-                data-lucide="quote"
-                class="absolute -top-3 -left-4 w-8 h-8 text-[#E1F0FF] fill-current opacity-80 z-0"
-              ></i>
-              <span class="relative z-10"
-                >"My goal isn't just to treat your pet when they are sick. It is
-                to partner with you to ensure they live the longest, happiest
-                life possible."</span
-              >
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- contact us  section-->
-    <section
-      id="contact-us"
-      class="py-20 lg:py-32 relative overflow-hidden w-full"
-    >
-      <!-- contact  -->
-      <div class="absolute inset-0 bg-slate-50 z-0"></div>
-
-      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div
-          class="bg-slate-50 border border-slate-50 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16"
-        >
-          <div
-            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-          >
-            <div
-              class="space-y-8 lg:pr-8 text-center lg:text-left flex flex-col items-center lg:items-start"
-            >
-              <div>
-                <div
-                  class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm w-max mx-auto lg:mx-0"
-                >
-                  <i
-                    data-lucide="message-circle"
-                    class="w-3.5 h-3.5 fill-current"
-                  ></i>
-                  <span>Contact Us</span>
-                </div>
-                <h2
-                  class="text-3xl md:text-4xl lg:text-5xl font-black text-[#0A2540] tracking-tight mb-6 leading-tight"
-                >
-                  Let's connect &
-                  <span class="text-[#17478D]">care together.</span>
-                </h2>
-                <p
-                  class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0"
-                >
-                  Have questions or ready to book? Our dedicated team is here to
-                  provide the support your furry friend deserves.
-                </p>
-              </div>
-
-              <div
-                class="w-full max-w-[240px] md:max-w-[280px] opacity-100 transition-transform duration-500"
-              >
-                <lottie-player
-                  src="pethug.json"
-                  background="transparent"
-                  speed="1"
-                  loop
-                  autoplay
-                ></lottie-player>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
-              <div
-                class="sm:col-span-2 bg-[#17478D] rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 shadow-xl relative overflow-hidden group flex flex-col justify-center"
-              >
-                <div
-                  class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-[40px] transform translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-700"
-                ></div>
-
-                <div
-                  class="relative z-10 flex flex-col md:flex-row items-center md:items-start lg:items-center justify-between gap-8 text-center md:text-left"
-                >
-                  <div
-                    class="space-y-4 md:space-y-3 flex flex-col items-center md:items-start"
-                  >
-                    <div
-                      class="w-14 h-14 bg-white/10 backdrop-blur-md text-white rounded-2xl flex items-center justify-center border border-white/20 shrink-0"
-                    >
-                      <i data-lucide="mail" class="w-7 h-7"></i>
-                    </div>
-                    <div>
-                      <h3 class="text-2xl font-black text-white mb-2">
-                        Email Us
-                      </h3>
-                      <p
-                        class="text-[#E1F0FF] font-medium text-sm md:text-base opacity-90 max-w-xs mx-auto md:mx-0"
-                      >
-                        Get a fast response within 24 hours. No forms, just
-                        direct contact.
-                      </p>
-                    </div>
-                  </div>
-
-                  <a
-                    href="mailto:aeronquizon15@gmail.com?subject=Inquiry"
-                    class="w-full md:w-auto shrink-0 bg-white text-[#17478D] px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl hover:bg-[#F8FAFC] transition-all hover:-translate-y-1 flex items-center justify-center group-hover:scale-105"
-                  >
-                    Drop a message
-                    <i data-lucide="arrow-up-right" class="w-5 h-5 ml-2"></i>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Call -->
-              <a
-                href="tel:+639369910528"
-                class="bg-white border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 shadow-lg hover:shadow-xl hover:border-[#E1F0FF] transition-all group flex flex-col items-center sm:items-start text-center sm:text-left"
-              >
-                <div class="w-full flex flex-col items-center sm:items-start">
-                  <div
-                    class="w-14 h-14 bg-slate-50 group-hover:bg-[#17478D] text-[#17478D] group-hover:text-white rounded-2xl flex items-center justify-center mb-6 transition-colors shadow-sm shrink-0"
-                  >
-                    <i data-lucide="phone-call" class="w-7 h-7"></i>
-                  </div>
-                  <p
-                    class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1"
-                  >
-                    Call Clinic
-                  </p>
-                  <p
-                    class="text-sm md:text-base font-bold text-[#0A2540] group-hover:text-[#17478D] transition-colors"
-                  >
-                    +63 936 991 0528
-                  </p>
-                </div>
-              </a>
-
-              <!-- Location -->
-              <div
-                class="bg-white border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 shadow-lg group flex flex-col items-center sm:items-start text-center sm:text-left"
-              >
-                <div class="w-full flex flex-col items-center sm:items-start">
-                  <div
-                    class="w-14 h-14 bg-slate-50 text-[#17478D] group-hover:bg-[#17478D] group-hover:text-white rounded-2xl flex items-center justify-center mb-6 transition-colors shadow-sm shrink-0"
-                  >
-                    <i data-lucide="map-pin" class="w-7 h-7"></i>
-                  </div>
-                  <p
-                    class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1"
-                  >
-                    Visit Us
-                  </p>
-                  <p class="text-sm md:text-base font-bold text-[#0A2540]">
-                    Pandan, Bogo City, Cebu
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer
-      class="w-full bg-slate-50 pt-16 mt-20 border-t border-slate-200 flex flex-col relative overflow-hidden"
-    >
-      <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
-        <div
-          class="flex flex-col md:flex-row justify-between items-start gap-12 lg:gap-16"
-        >
-          <div class="space-y-4 max-w-md">
-            <a href="#" class="flex items-center space-x-2 group w-max">
-              <img
-                src="logopaw.svg"
-                alt="PawPatrol Veterinary Clinic Logo"
-                width="160"
-                height="48"
-                loading="lazy"
-                class="h-12 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300"
-              />
-              <h2 class="text-2xl font-black text-[#17478D] tracking-tight m-0">
-                PawPatrol
-              </h2>
-            </a>
-            <p class="text-slate-600 font-medium leading-relaxed">
-              Compassionate care for your best friend. A modern medical haven of
-              knowledge and care accessible to all pets.
-            </p>
-          </div>
-
-          <div class="space-y-4 md:min-w-[200px]">
-            <h3
-              class="font-bold text-[#0A2540] uppercase tracking-widest text-sm"
-            >
-              Explore
-            </h3>
-            <nav class="flex flex-col space-y-3">
-              <a
-                href="#our-services"
-                class="text-slate-600 hover:text-[#17478D] font-bold transition-colors w-max"
-                >Our Services</a
-              >
-              <a
-                href="#about-us"
-                class="text-slate-600 hover:text-[#17478D] font-bold transition-colors w-max"
-                >About Us</a
-              >
-              <a
-                href="#meet-the-vet"
-                class="text-slate-600 hover:text-[#17478D] font-bold transition-colors w-max"
-                >Meet the Vet</a
-              >
-              <a
-                href="#contact-us"
-                class="text-slate-600 hover:text-[#17478D] font-bold transition-colors w-max"
-                >Contact Us</a
-              >
-            </nav>
-          </div>
-        </div>
-      </div>
-
-      <!-- pets svg -->
-
-      <div
-        class="w-full flex justify-center -mt-[150px] md:-mt-[250px] lg:-mt-[350px] -mb-1 relative z-0 pointer-events-none"
-      >
-        <img
-          src="petsfooter.svg"
-          alt="Happy PawPatrol Pets"
-          width="1400"
-          height="200"
-          loading="lazy"
-          class="w-full min-w-[1000px] max-w-[1400px] h-auto opacity-50"
-        />
-      </div>
-
-      <!-- copyright -->
-      <div class="bg-slate-50 relative z-20">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 text-center">
-          <p
-            class="text-slate-500 font-bold text-xs sm:text-sm tracking-widest uppercase"
-          >
-            &copy; 2026 PawPatrol Veterinary Clinic. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-    <script>
-      const header = document.getElementById("my-navbar");
-
-      // word changing animation
-      document.addEventListener("DOMContentLoaded", function () {
-        const words = ["Healthier", "Happier", "Better"];
-        let currentIndex = 0;
-        const wordElement = document.getElementById("changing-word");
-
-        if (wordElement) {
-          setInterval(() => {
-            wordElement.classList.remove("translate-y-0", "opacity-100");
-            wordElement.classList.add("-translate-y-full", "opacity-0");
-
-            setTimeout(() => {
-              currentIndex = (currentIndex + 1) % words.length;
-              wordElement.textContent = words[currentIndex];
-
-              wordElement.classList.remove(
-                "transition-all",
-                "duration-500",
-                "-translate-y-full",
-              );
-              wordElement.classList.add("translate-y-full");
-
-              void wordElement.offsetWidth;
-
-              wordElement.classList.add("transition-all", "duration-500");
-              wordElement.classList.remove("translate-y-full", "opacity-0");
-              wordElement.classList.add("translate-y-0", "opacity-100");
-            }, 300);
-          }, 3000);
-        }
-      });
-
-      // When the user scrolls down 20px from the top of the document, change the navbar background
-      window.addEventListener("scroll", () => {
-        // When the user scrolls more than 20 pixels down
-        if (window.scrollY > 20) {
-          header.classList.remove("bg-transparent", "py-4");
-          header.classList.add("bg-white/95", "backdrop-blur-sm", "py-3");
-        } else {
-          // Revert back to transparent when at the top
-          header.classList.add("bg-transparent", "py-4", "border-transparent");
-          header.classList.remove(
-            "bg-white/95",
-            "backdrop-blur-sm",
-            "py-3",
-            "shadow-md",
-            "border-slate-200",
-          );
-        }
-      });
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const mobileLinks = document.querySelectorAll(".mobile-link");
-
-      let menuOpen = false;
-
-      function toggleMenu() {
-        menuOpen = !menuOpen;
-        if (menuOpen) {
-          mobileMenu.classList.remove("scale-y-0", "opacity-0");
-          mobileMenu.classList.add("scale-y-100", "opacity-100");
-          mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
-          lucide.createIcons();
-        } else {
-          mobileMenu.classList.remove("scale-y-100", "opacity-100");
-          mobileMenu.classList.add("scale-y-0", "opacity-0");
-          mobileMenuBtn.innerHTML =
-            '<i data-lucide="menu" class="w-6 h-6"></i>';
-          lucide.createIcons();
-        }
-      }
-
-      if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener("click", toggleMenu);
-      }
-
-      // Close menu when clicking a link
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          if (menuOpen) toggleMenu();
-        });
-      });
-
-      // Google Form Modal Logic
-      function openGoogleForm(url, title) {
-        const googleFormModal = document.getElementById("google-form-modal");
-        const modalContent = googleFormModal.querySelector(
-          ".modal-content-container",
-        );
-        const modalTitle = googleFormModal.querySelector("h3");
-        const modalIframe = googleFormModal.querySelector("iframe");
-
-        modalTitle.textContent = title;
-        modalIframe.src = url;
-
-        googleFormModal.classList.remove("opacity-0", "pointer-events-none");
-        modalContent.classList.remove("scale-95");
-        modalContent.classList.add("scale-100");
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-      }
-
-      function closeGoogleForm() {
-        const googleFormModal = document.getElementById("google-form-modal");
-        const modalContent = googleFormModal.querySelector(
-          ".modal-content-container",
-        );
-        googleFormModal.classList.add("opacity-0", "pointer-events-none");
-        modalContent.classList.remove("scale-100");
-        modalContent.classList.add("scale-95");
-        document.body.style.overflow = ""; // Restore background scrolling
-
-        // Clear iframe src after transition to stop it from loading in the background
-        setTimeout(() => {
-          const iframe = googleFormModal.querySelector("iframe");
-          if (iframe) iframe.src = "";
-        }, 300);
-      }
-    </script>
-
-    <!-- Google Form Modal -->
-    <div
-      id="google-form-modal"
-      onclick="if (event.target === this) closeGoogleForm();"
-      class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6"
-    >
-      <div
-        class="modal-content-container bg-white rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300"
-      >
-        <!-- Modal Header -->
-        <div
-          class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50"
-        >
-          <h3 class="text-xl font-bold text-[#0A2540]">Loading...</h3>
-          <button
-            onclick="closeGoogleForm()"
-            aria-label="Close form"
-            class="text-slate-500 hover:text-[#E87B75] bg-white rounded-full p-2 shadow-sm transition-colors"
-          >
-            <i data-lucide="x" class="w-5 h-5"></i>
+            class="w-full sm:w-auto inline-flex items-center justify-center bg-[#17478D] hover:bg-[#123972] text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg transition-all hover:-translate-y-0.5">
+            Book an Appointment
+            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
           </button>
-        </div>
-        <!-- Iframe Container -->
-        <div
-          class="flex-1 overflow-y-auto overflow-x-hidden bg-slate-50 relative w-full h-[80vh] min-h-[400px]"
-        >
-          <iframe
-            src=""
-            title="Google Form"
-            class="absolute inset-0 w-full h-full border-0"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            >Loading…</iframe
-          >
         </div>
       </div>
     </div>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script>
-      lucide.createIcons();
-    </script>
-  </body>
+
+    <!-- scroll down anim -->
+    <a href="#our-services"
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+      <lottie-player src="scrolldowner.json" background="transparent" speed="1" style="width: 40px; height: 40px" loop
+        autoplay>
+      </lottie-player>
+    </a>
+  </main>
+
+  <!-- our services -->
+  <section id="our-services" class="py-20 lg:py-32 bg-white w-full overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 mb-20 lg:mb-32">
+        <div class="max-w-2xl">
+          <div
+            class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Our Services</span>
+          </div>
+
+          <h3 class="text-2xl md:text-3xl lg:text-4xl font-black text-[#0A2540] leading-tight tracking-tight">
+            Comprehensive Care <br class="hidden lg:block" />
+            & Veterinary Services
+          </h3>
+        </div>
+
+        <div class="lg:w-1/3 lg:pt-20">
+          <p class="text-slate-500 text-base md:text-lg font-medium leading-relaxed">
+            Experience top-tier veterinary services designed to withstand
+            every stage of life, ensuring your pet remains healthy, active,
+            and happy.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col space-y-24 lg:space-y-32">
+        <div class="flex flex-col md:flex-row items-center gap-10 lg:gap-20 group">
+          <div
+            class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100">
+            <img src="wellnessexam.webp" alt="Veterinarian performing wellness exam" width="1200" height="800"
+              loading="lazy"
+              class="w-full aspect-[4/3] lg:aspect-video object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="w-full md:w-1/2 max-w-lg space-y-5">
+            <h3 class="text-xl lg:text-2xl font-bold text-[#0A2540]">
+              Wellness exams
+            </h3>
+            <p class="text-slate-500 text-lg leading-relaxed">
+              Get a custom health plan that complements your pet's lifestyle.
+              Regular check-ups and tailored vaccinations keep them strong.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center gap-10 lg:gap-20 group">
+          <div
+            class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100">
+            <img src="dental.webp" alt="Veterinary dental cleaning" width="1200" height="800" loading="lazy"
+              class="w-full aspect-[4/3] lg:aspect-video object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="w-full md:w-1/2 max-w-lg space-y-5 md:pr-10 lg:pr-20">
+            <h3 class="text-xl lg:text-2xl font-bold text-[#0A2540]">
+              Advanced dental
+            </h3>
+            <p class="text-slate-500 text-lg leading-relaxed">
+              Ensure your pet's oral health is in top shape with detailed
+              inspections, deep cleanings, and expert preventative advice.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-10 lg:gap-20 group">
+          <div
+            class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100">
+            <img src="surg.webp" alt="Veterinary surgical care" width="1200" height="800" loading="lazy"
+              class="w-full aspect-[4/3] lg:aspect-video object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="w-full md:w-1/2 max-w-lg space-y-5">
+            <h3 class="text-xl lg:text-2xl font-bold text-[#0A2540]">
+              Surgical care
+            </h3>
+            <p class="text-slate-500 text-lg leading-relaxed">
+              From routine spays to complex soft-tissue surgeries, trust our
+              experienced team and sterile environment for safe recoveries.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse items-center gap-10 lg:gap-20 group">
+          <div
+            class="w-full md:w-1/2 shrink-0 overflow-hidden rounded-[2rem] bg-slate-50 shadow-xl shadow-slate-200/50 border border-slate-100">
+            <img src="xray.webp" alt="Veterinary ultrasound and x-ray" width="800" height="800" loading="lazy"
+              class="w-full aspect-[4/3] lg:aspect-video object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="w-full md:w-1/2 max-w-lg space-y-5 md:pr-10 lg:pr-20">
+            <h3 class="text-xl lg:text-2xl font-bold text-[#0A2540]">
+              In-house diagnostics
+            </h3>
+            <p class="text-slate-500 text-lg leading-relaxed">
+              Upgrade your pet's care with rapid, accurate testing including
+              digital X-rays, ultrasounds, and comprehensive blood work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- about us -->
+  <section id="about-us"
+    class="relative py-20 lg:py-32 w-full bg-cover bg-center bg-fixed min-h-[900px] flex flex-col justify-center"
+    style="background-image: url(&quot;paw.webp&quot;)">
+    <!-- filter for background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 sm:via-white/70 to-transparent z-0"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+      <div class="max-w-2xl flex flex-col justify-center">
+        <div
+          class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm w-max">
+          <i data-lucide="heart" class="w-3.5 h-3.5 fill-current"></i>
+          <span>About Us</span>
+        </div>
+
+        <h2
+          class="text-2xl md:text-3xl lg:text-4xl font-black text-[#0A2540] leading-tight tracking-tight mb-8 flex flex-wrap items-end gap-x-3">
+          Building a
+
+          <span class="inline-flex overflow-hidden relative align-bottom">
+            <!-- word anim -->
+            <span id="changing-word"
+              class="text-[#0A2540] transition-all duration-500 transform translate-y-0 block">Healthier</span>
+          </span>
+          Pet Community.
+        </h2>
+
+        <!-- Paragraph -->
+        <p class="text-slate-700 text-base md:text-lg leading-relaxed font-medium">
+          <span class="font-extrabold text-[#17478D]">Pawpatrol</span> was
+          founded by a passionate team of lifelong animal lovers and visionary
+          veterinarians. Their shared dream was to create a medical haven of
+          knowledge and care accessible to all pets. United by their belief in
+          the transformational power of compassionate care, they embarked on a
+          journey to build this clinic. With relentless dedication, they
+          gathered a team of experts and launched this modern facility,
+          creating a community of pet parents all connected by the desire to
+          see their furry friends explore, live, and grow happily.
+        </p>
+
+        <div class="pt-8">
+          <a href="#meet-the-vet"
+            class="bg-[#17478D] hover:bg-[#0A2540] text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-all hover:-translate-y-1 flex items-center w-max">
+            Meet Our Lead Veterinarian
+            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  lead vet section -->
+  <section id="meet-the-vet" class="py-20 lg:py-32 bg-slate-50 w-full overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="lg:hidden mb-2 mt-4">
+        <div
+          class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase shadow-sm w-max">
+          <i data-lucide="stethoscope" class="w-3.5 h-3.5 fill-current"></i>
+          <span>Meet Our Lead Veterinarian</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-5 relative group mt-6 lg:mt-0">
+          <div
+            class="absolute inset-0 rounded-t-[10rem] rounded-b-[3rem] transform -rotate-3 scale-105 transition-transform duration-500 group-hover:rotate-0">
+          </div>
+
+          <div
+            class="relative w-full aspect-[4/5] overflow-hidden rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100">
+            <img src="dr.sins.webp" alt="Portrait of the Lead Veterinarian" width="389" height="653" loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-8 lg:pl-10">
+          <!-- Tag -->
+          <div
+            class="hidden lg:inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm w-max">
+            <i data-lucide="stethoscope" class="w-3.5 h-3.5 fill-current"></i>
+            <span>Meet Our Lead Veterinarian</span>
+          </div>
+
+          <!-- Name and Title -->
+          <div>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-[#0A2540] leading-tight tracking-tight mb-3">
+              Dr. Jhonny Sins
+            </h2>
+            <p class="text-xl md:text-2xl font-bold text-[#17478D]">
+              Lead Veterinarian & Founder
+            </p>
+          </div>
+
+          <!-- Bio Paragraphs -->
+          <div class="text-lg text-slate-600 font-medium leading-relaxed space-y-6">
+            <p>
+              With over 15 years of dedicated experience in small animal
+              medicine, Dr. Sins founded PawPatrol with a single mission: to
+              provide world-class, fear-free veterinary care in a welcoming,
+              comfortable environment.
+            </p>
+            <p>
+              He received his Doctorate of Veterinary Medicine with honors and
+              specializes in preventative care, soft-tissue surgery, and
+              specialized feline medicine. When he isn't at the clinic
+              treating his favorite patients, you can find him hiking local
+              trails with his two rescue golden retrievers.
+            </p>
+          </div>
+
+          <!-- quote -->
+          <blockquote
+            class="relative border-l-4 border-[#17478D] pl-6 py-4 my-8 bg-white rounded-r-2xl shadow-sm text-slate-700 text-lg font-medium italic">
+            <i data-lucide="quote"
+              class="absolute -top-3 -left-4 w-8 h-8 text-[#E1F0FF] fill-current opacity-80 z-0"></i>
+            <span class="relative z-10">"My goal isn't just to treat your pet when they are sick. It is
+              to partner with you to ensure they live the longest, happiest
+              life possible."</span>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact us  section-->
+  <section id="contact-us" class="py-20 lg:py-32 relative overflow-hidden w-full">
+    <!-- contact  -->
+    <div class="absolute inset-0 bg-slate-50 z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="bg-slate-50 border border-slate-50 rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="space-y-8 lg:pr-8 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div>
+              <div
+                class="inline-flex items-center space-x-2 bg-[#0A2540] text-white px-3 py-1.5 rounded-md text-xs font-bold tracking-widest uppercase mb-6 shadow-sm w-max mx-auto lg:mx-0">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-current"></i>
+                <span>Contact Us</span>
+              </div>
+              <h2 class="text-xl md:text-2xl lg:text-3xl font-black text-[#0A2540] tracking-tight mb-6 leading-tight">
+                Let's connect &
+                <span class="text-[#17478D]">care together.</span>
+              </h2>
+              <p class="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Have questions or ready to book? Our dedicated team is here to
+                provide the support your furry friend deserves.
+              </p>
+            </div>
+
+            <div class="w-full max-w-[240px] md:max-w-[280px] opacity-100 transition-transform duration-500">
+              <lottie-player src="pethug.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            <div
+              class="sm:col-span-2 bg-[#17478D] rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 shadow-xl relative overflow-hidden group flex flex-col justify-center">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-[40px] transform translate-x-1/2 -translate-y-1/2 group-hover:scale-150 transition-transform duration-700">
+              </div>
+
+              <div
+                class="relative z-10 flex flex-col md:flex-row items-center md:items-start lg:items-center justify-between gap-8 text-center md:text-left">
+                <div class="space-y-4 md:space-y-3 flex flex-col items-center md:items-start">
+                  <div
+                    class="w-14 h-14 bg-white/10 backdrop-blur-md text-white rounded-2xl flex items-center justify-center border border-white/20 shrink-0">
+                    <i data-lucide="mail" class="w-7 h-7"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-black text-white mb-2">
+                      Email Us
+                    </h3>
+                    <p class="text-[#E1F0FF] font-medium text-sm md:text-base opacity-90 max-w-xs mx-auto md:mx-0">
+                      Get a fast response within 24 hours. No forms, just
+                      direct contact.
+                    </p>
+                  </div>
+                </div>
+
+                <a href="mailto:aeronquizon15@gmail.com?subject=Inquiry"
+                  class="w-full md:w-auto shrink-0 bg-white text-[#17478D] px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl hover:bg-[#F8FAFC] transition-all hover:-translate-y-1 flex items-center justify-center group-hover:scale-105">
+                  Drop a message
+                  <i data-lucide="arrow-up-right" class="w-5 h-5 ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Call -->
+            <a href="tel:+639369910528"
+              class="bg-white border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 shadow-lg hover:shadow-xl hover:border-[#E1F0FF] transition-all group flex flex-col items-center sm:items-start text-center sm:text-left">
+              <div class="w-full flex flex-col items-center sm:items-start">
+                <div
+                  class="w-14 h-14 bg-slate-50 group-hover:bg-[#17478D] text-[#17478D] group-hover:text-white rounded-2xl flex items-center justify-center mb-6 transition-colors shadow-sm shrink-0">
+                  <i data-lucide="phone-call" class="w-7 h-7"></i>
+                </div>
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">
+                  Call Clinic
+                </p>
+                <p class="text-sm md:text-base font-bold text-[#0A2540] group-hover:text-[#17478D] transition-colors">
+                  +63 936 991 0528
+                </p>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div
+              class="bg-white border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 shadow-lg group flex flex-col items-center sm:items-start text-center sm:text-left">
+              <div class="w-full flex flex-col items-center sm:items-start">
+                <div
+                  class="w-14 h-14 bg-slate-50 text-[#17478D] group-hover:bg-[#17478D] group-hover:text-white rounded-2xl flex items-center justify-center mb-6 transition-colors shadow-sm shrink-0">
+                  <i data-lucide="map-pin" class="w-7 h-7"></i>
+                </div>
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">
+                  Visit Us
+                </p>
+                <p class="text-sm md:text-base font-bold text-[#0A2540]">
+                  Pandan, Bogo City, Cebu
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full bg-slate-50 pt-16 mt-20 border-t border-slate-200 flex flex-col relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-12 lg:gap-16">
+        <div class="space-y-4 max-w-md">
+          <a href="#" class="flex items-center space-x-2 group w-max">
+            <img src="logopaw.svg" alt="PawPatrol Veterinary Clinic Logo" width="160" height="48" loading="lazy"
+              class="h-12 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform duration-300" />
+            <h2 class="text-2xl font-black text-[#17478D] tracking-tight m-0">
+              PawPatrol
+            </h2>
+          </a>
+          <p class="text-slate-600 font-medium leading-relaxed">
+            Compassionate care for your best friend. A modern medical haven of
+            knowledge and care accessible to all pets.
+          </p>
+        </div>
+
+        <div class="space-y-4 md:min-w-[200px]">
+          <h3 class="font-bold text-[#0A2540] uppercase tracking-widest text-sm">
+            Explore
+          </h3>
+          <nav class="flex flex-col space-y-3">
+            <a href="#our-services" class="text-slate-600 hover:text-[#17478D] font-bold transition-colors w-max">Our
+              Services</a>
+            <a href="#about-us" class="text-slate-600 hover:text-[#17478D] font-bold transition-colors w-max">About
+              Us</a>
+            <a href="#meet-the-vet" class="text-slate-600 hover:text-[#17478D] font-bold transition-colors w-max">Meet
+              the Vet</a>
+            <a href="#contact-us" class="text-slate-600 hover:text-[#17478D] font-bold transition-colors w-max">Contact
+              Us</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- pets svg -->
+
+    <div
+      class="w-full flex justify-center -mt-[150px] md:-mt-[250px] lg:-mt-[350px] -mb-1 relative z-0 pointer-events-none">
+      <img src="petsfooter.svg" alt="Happy PawPatrol Pets" width="1400" height="200" loading="lazy"
+        class="w-full min-w-[1000px] max-w-[1400px] h-auto opacity-50" />
+    </div>
+
+    <!-- copyright -->
+    <div class="bg-slate-50 relative z-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 text-center">
+        <p class="text-slate-500 font-bold text-xs sm:text-sm tracking-widest uppercase">
+          &copy; 2026 PawPatrol Veterinary Clinic. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const header = document.getElementById("my-navbar");
+
+    // word changing animation
+    document.addEventListener("DOMContentLoaded", function () {
+      const words = ["Healthier", "Happier", "Better"];
+      let currentIndex = 0;
+      const wordElement = document.getElementById("changing-word");
+
+      if (wordElement) {
+        setInterval(() => {
+          wordElement.classList.remove("translate-y-0", "opacity-100");
+          wordElement.classList.add("-translate-y-full", "opacity-0");
+
+          setTimeout(() => {
+            currentIndex = (currentIndex + 1) % words.length;
+            wordElement.textContent = words[currentIndex];
+
+            wordElement.classList.remove(
+              "transition-all",
+              "duration-500",
+              "-translate-y-full",
+            );
+            wordElement.classList.add("translate-y-full");
+
+            void wordElement.offsetWidth;
+
+            wordElement.classList.add("transition-all", "duration-500");
+            wordElement.classList.remove("translate-y-full", "opacity-0");
+            wordElement.classList.add("translate-y-0", "opacity-100");
+          }, 300);
+        }, 3000);
+      }
+    });
+
+    // When the user scrolls down 20px from the top of the document, change the navbar background
+    window.addEventListener("scroll", () => {
+      // When the user scrolls more than 20 pixels down
+      if (window.scrollY > 20) {
+        header.classList.remove("bg-transparent", "py-4");
+        header.classList.add("bg-white/95", "backdrop-blur-sm", "py-3");
+      } else {
+        // Revert back to transparent when at the top
+        header.classList.add("bg-transparent", "py-4", "border-transparent");
+        header.classList.remove(
+          "bg-white/95",
+          "backdrop-blur-sm",
+          "py-3",
+          "shadow-md",
+          "border-slate-200",
+        );
+      }
+    });
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    let menuOpen = false;
+
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.classList.remove("scale-y-0", "opacity-0");
+        mobileMenu.classList.add("scale-y-100", "opacity-100");
+        mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+        lucide.createIcons();
+      } else {
+        mobileMenu.classList.remove("scale-y-100", "opacity-100");
+        mobileMenu.classList.add("scale-y-0", "opacity-0");
+        mobileMenuBtn.innerHTML =
+          '<i data-lucide="menu" class="w-6 h-6"></i>';
+        lucide.createIcons();
+      }
+    }
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener("click", toggleMenu);
+    }
+
+    // Close menu when clicking a link
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (menuOpen) toggleMenu();
+      });
+    });
+
+    // Google Form Modal Logic
+    function openGoogleForm(url, title) {
+      const googleFormModal = document.getElementById("google-form-modal");
+      const modalContent = googleFormModal.querySelector(
+        ".modal-content-container",
+      );
+      const modalTitle = googleFormModal.querySelector("h3");
+      const modalIframe = googleFormModal.querySelector("iframe");
+
+      modalTitle.textContent = title;
+      modalIframe.src = url;
+
+      googleFormModal.classList.remove("opacity-0", "pointer-events-none");
+      modalContent.classList.remove("scale-95");
+      modalContent.classList.add("scale-100");
+      document.body.style.overflow = "hidden"; // Prevent background scrolling
+    }
+
+    function closeGoogleForm() {
+      const googleFormModal = document.getElementById("google-form-modal");
+      const modalContent = googleFormModal.querySelector(
+        ".modal-content-container",
+      );
+      googleFormModal.classList.add("opacity-0", "pointer-events-none");
+      modalContent.classList.remove("scale-100");
+      modalContent.classList.add("scale-95");
+      document.body.style.overflow = ""; // Restore background scrolling
+
+      // Clear iframe src after transition to stop it from loading in the background
+      setTimeout(() => {
+        const iframe = googleFormModal.querySelector("iframe");
+        if (iframe) iframe.src = "";
+      }, 300);
+    }
+  </script>
+
+  <!-- Google Form Modal -->
+  <div id="google-form-modal" onclick="if (event.target === this) closeGoogleForm();"
+    class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 sm:p-6">
+    <div
+      class="modal-content-container bg-white rounded-2xl md:rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+        <h3 class="text-xl font-bold text-[#0A2540]">Loading...</h3>
+        <button onclick="closeGoogleForm()" aria-label="Close form"
+          class="text-slate-500 hover:text-[#E87B75] bg-white rounded-full p-2 shadow-sm transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <!-- Iframe Container -->
+      <div class="flex-1 overflow-y-auto overflow-x-hidden bg-slate-50 relative w-full h-[80vh] min-h-[400px]">
+        <iframe src="" title="Google Form" class="absolute inset-0 w-full h-full border-0" frameborder="0"
+          marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
 </html>
