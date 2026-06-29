@@ -9,7 +9,11 @@
     />
     <title>PawPatrol</title>
     <link rel="icon" type="image/svg+xml" href="logopaw.svg" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
     <link rel="preload" as="image" href="piwpiw.webp" />
+    <link rel="preload" href="scrolldowner.json" as="fetch" crossorigin="anonymous" />
+    <link rel="preload" href="pethug.json" as="fetch" crossorigin="anonymous" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
@@ -919,10 +923,12 @@
         </div>
       </div>
     </div>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script>
-      lucide.createIcons();
+      window.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
     </script>
   </body>
 </html>
